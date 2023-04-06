@@ -38,7 +38,8 @@ app.get("/users/:id", (req, res) => {
 
 app.post("/users", (req, res) => {
   const schema = Joi.object({
-    name: Joi.string().min(3).required()
+    name: Joi.string().min(3).required(),
+    age: Joi.number().integer().min(1).required()
   });
 
   const result = schema.validate(req.body);
@@ -48,7 +49,8 @@ app.post("/users", (req, res) => {
 
   const user = {
     id: users.length + 1,
-    name: req.body.name
+    name: req.body.name,
+    age: req.body.age
   };
   users.push(user);
   res.send(user);
@@ -61,7 +63,8 @@ app.put("/users/:id", (req, res) => {
   }
 
   const schema = Joi.object({
-    name: Joi.string().min(3).required()
+    name: Joi.string().min(3),
+    age: Joi.number().integer().min(1)
   });
 
   const result = schema.validate(req.body);
@@ -69,9 +72,9 @@ app.put("/users/:id", (req, res) => {
     return res.status(400).send(result.error.details[0].message);
   }
   
-  user.name = req.body.name
+  user.name = req.body.name || user.name;
+  user.age = req.body.age || user.age;
   res.send(user);
-
 });
 
 app.delete("/users/:id", (req, res) => {

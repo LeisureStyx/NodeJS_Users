@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+app.use(express.json());
+
 const users = [
   { id: 1, name: "asd", age: 15 },
   { id: 2, name: "jkl", age: 32 },
@@ -23,6 +25,19 @@ app.get("/ping", (req, res) => {
 
 app.get("/users", (req, res) => {
   res.send(trueResponse(users));
+});
+
+app.post("/users", (req, res) => {
+  if (!req.body.name || req.body.name.length < 3) {
+    res.status(400).send("Name should be min. 3 characters")
+    return;
+  }
+  const user = {
+    id: users.length + 1,
+    name: req.body.name
+  };
+  users.push(user);
+  res.send(user);
 });
 
 app.get("/users/:id", (req, res) => {

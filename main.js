@@ -28,6 +28,14 @@ app.get("/users", (req, res) => {
   res.send(trueResponse(users));
 });
 
+app.get("/users/:id", (req, res) => {
+  const user = users.find(u => u.id === parseInt(req.params.id));
+  if (!user) {
+    return res.status(404).json({ success: false });
+  }
+  res.send(trueResponse(user));
+});
+
 app.post("/users", (req, res) => {
   const schema = Joi.object({
     name: Joi.string().min(3).required()
@@ -64,14 +72,6 @@ app.put("/users/:id", (req, res) => {
   user.name = req.body.name
   res.send(user);
 
-});
-
-app.get("/users/:id", (req, res) => {
-  const user = users.find(u => u.id === parseInt(req.params.id));
-  if (!user) {
-    return res.status(404).json({ success: false });
-  }
-  res.send(trueResponse(user));
 });
 
 app.delete("/users/:id", (req, res) => {

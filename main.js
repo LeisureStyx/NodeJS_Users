@@ -53,7 +53,7 @@ app.post("/users", (req, res) => {
     age: req.body.age
   };
   users.push(user);
-  res.send(user);
+  res.status(201).send(user);
 });
 
 app.put("/users/:id", (req, res) => {

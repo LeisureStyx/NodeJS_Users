@@ -34,7 +34,7 @@ npm install
 
 ## :rocket: Run & Test :test_tube:
 Once the dependecies are installed, follow these instructions to run and test this project:
-### 1. Run the local web/development server using nodemon, with provided script:
+### 1. :rocket: Run the local web/development server using nodemon, with provided script:
 ```bash
 npm run dev
 ```
@@ -48,10 +48,12 @@ Wait a few seconds; it will be ready when you see the following output by defaul
 Listening to 3000..
 ```
 
-### 2. To test if the project works:
+### 2. :test_tube: To test if the project works:
    - #### HTTP GET Request
      - **(Not Recommended)** You can open up your browser and type in your address bar: `http://localhost:3000/users` , and it should appear a JSON that contains all user data, or
-     - Open up [Postman](https://www.postman.com/); in the top-middle of the window, slightly to the left (or in the workbench), click the **+** button and you will open a new a request and response tab. At the request section, by default, response method will be `GET` , if it doesn't, change the HTTP request method to `GET` and type in request URL: `http://localhost:3000/users` , then press Send. The response will be located at the bottom of the request section
+     - Open up [Postman](https://www.postman.com/); in the top-middle of the window, slightly to the left (or in the workbench), click the `+` button and you will open a new a request and response tab. At the request section, by default, response method will be `GET` , if it doesn't, change the HTTP request method to `GET` and type in request URL: `http://localhost:3000/users` , then press Send. The response will be located at the bottom of the request section
+     
+     ![image](https://user-images.githubusercontent.com/129574206/231051422-38ffda14-f3a1-4423-863c-a33950a383bb.png)
    
      The response body will be the same for both, except in a browser it may be not raw formatted:
      ```json
@@ -74,6 +76,8 @@ Listening to 3000..
      To see the response code in a browser (for example, Google Chrome), press `F12` or right click -> Inspect, then click `>>` -> Network, recommend to disabling cache, after that refresh `F5`. But it's better to use [Postman](https://www.postman.com/).
      
      To see the response code in [Postman](https://www.postman.com/), after sending a HTTP GET request, check the response section around the bottom of the screen. You should see a `200 OK` response code, along with the response time and size.
+     
+     ![image](https://user-images.githubusercontent.com/129574206/231051603-eda884c8-ca11-426f-9cee-a05d98000628.png)
 
      ***[Postman](https://www.postman.com/) will continue to be used going forward for HTTP POST, PUT, and DELETE requests.***
 

@@ -123,7 +123,7 @@ Listening to 3000..
      }
      ```
 
-     When we clicked send, if we checked `/users` by sending a HTTP GET request to `http://localhost:3000/users` , the user age with an ID of 3 will changed to `30`, and keep `name` as normal:
+     When we clicked send, if we checked `/users` by sending a HTTP GET request to `http://localhost:3000/users` , the user `age` with an ID of 3 will changed to `30`, and keep `name` as normal:
      ```json
      {
         "success": true,
@@ -169,3 +169,5 @@ Listening to 3000..
       ]
     }
     ```
+## Usage
+This project is intended for educational purposes only. Feel free to clone the project and modify the code to suit your own learning needs.
